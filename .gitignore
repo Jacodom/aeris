@@ -219,18 +219,18 @@ dist/
 
 # MEAN.js app and assets
 # ======================
-/aeris-app/public/dist/
-/aeris-app/uploads
-/aeris-app/modules/users/client/img/profile/uploads
-/aeris-app/config/env/local.js
+/public/dist/
+/uploads
+/modules/users/client/img/profile/uploads
+/config/env/local.js
 *.pem
-/aeris-app/public/lib
+/public/lib
 
-/aeris-app/.nodemonignore
-/aeris-app/.sass-cache/
-/aeris-app/node_modules/
-/aeris-app/public/lib/
-/aeris-app/app/tests/coverage/
-/aeris-app/.bower-*/
-/aeris-app/.idea/
-/aeris-app/coverage/
+.nodemonignore
+.sass-cache/
+/node_modules/
+/public/lib/
+/app/tests/coverage/
+/.bower-*/
+/.idea/
+/coverage/
