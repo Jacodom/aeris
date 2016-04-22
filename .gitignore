@@ -179,12 +179,6 @@ dist/
 ~$*.ppt*
 
 
-### Stylus ###
-*.css
-
-
-### Less ###
-*.css
 
 
 ### SAS ###
