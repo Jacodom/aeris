@@ -9,21 +9,56 @@ var mongoose = require('mongoose'),
 /**
  * Register Schema
  */
-var RegisterSchema = new Schema({
-  name: {
-    type: String,
-    default: '',
-    required: 'Please fill Register name',
-    trim: true
+var EsquemaRegisters = new Schema({
+  sintomas: [{
+    tos: {
+      type: Number,
+      required: true
+    },
+    dificultadRespiratoria: {
+      type: Number,
+      required: true
+    },
+    estornudos: {
+      type: Number,
+      required: true
+    },
+    sibilancia: {
+      type: Number,
+      required: true
+    },
+    obstruccionNasal: {
+      type: Number,
+      required: true
+    },
+    catarro: {
+      type: Number,
+      required: true
+    }
+  }],
+  person: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
   },
-  created: {
-    type: Date,
-    default: Date.now
+  created_at: {
+    type: Date
   },
-  user: {
-    type: Schema.ObjectId,
-    ref: 'User'
-  }
+  updated_at: {
+    type: Date
+  },
 });
 
-mongoose.model('Register', RegisterSchema);
+ // Guarda cuando fue creado y cuando fue actualizado
+EsquemaRegisters.pre('save', function(next) {
+  var now = new Date();
+  this.updated_at = now;
+  if (!this.created_at) {
+    this.created_at = now;
+  }
+  next();
+});
+
+mongoose.model('Register', EsquemaRegisters);
+
+module.exports = mongoose.model('Registers', EsquemaRegisters);
