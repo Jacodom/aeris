@@ -1,5 +1,6 @@
 .content {
-  margin-top: 50px;
+  margin-top: 40px;
+  background-color: #ecf0f1;
 }
 .undecorated-link:hover {
   text-decoration: none;
@@ -34,4 +35,22 @@ a:hover .header-profile-image {
 }
 .has-error .help-inline.error-text {
   display: inline;
+}
+
+.navbar-inverse {
+  background-image: none;
+  background-color: #333;
+  color: #ecf0f1;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #ecf0f1;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: #62b2a5;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+  color: #62b2a5;
 }
