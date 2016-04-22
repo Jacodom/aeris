@@ -1,8 +1,10 @@
 .start-wrapper {
-  border: solid 1px #eee;
   -webkit-box-shadow: -1px 4px 25px 1px rgba(125,119,125,0.27);
   -moz-box-shadow: -1px 4px 25px 1px rgba(125,119,125,0.27);
   box-shadow: -1px 4px 25px 1px rgba(125,119,125,0.27);
+  background-color: #333;
+  margin-bottom: 50px;
+  color: #ecf0f1;
 }
 
 .start-header {
@@ -11,12 +13,67 @@
 }
 
 .start-header h3 {
-  color: red;
-  font-size: 40px;
+  font-size: 48px;
 }
 
 .btns-wrapper {
   text-align: center;
   padding: 5%;
-  margin-bottom: 5%;
+  margin-bottom: 60px;
+}
+
+
+/*styles for start page */
+.start-content {
+  padding: 10px;
+}
+
+.description {
+  font-size: 40px;
+  line-height: 2.5;
+  text-align: left;
+}
+
+.description h2 {
+  display: inline;
+}
+
+h.highlight-aeris {
+  display: inline;
+  font-weight: bold;
+}
+
+.highlight-aeris {
+  color: #62b2a5;
+}
+
+.info-container {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.info-container span {
+  font-size: 60px;
+}
+
+.btn-primary.aeris-btn {
+  font-size: 30px;
+  background-color: #62b2a5;
+  background-image: none;
+  transition: all ease-out 0.3s;
+  border: none;
+}
+
+.aeris-btn:hover {
+  background-color: #fe6580;
+}
+
+.aeris-btn:focus {
+  border: none;
+}
+
+.aeris-btn:active:focus {
+  border: none;
+  background-color: #62b2a5;
 }
