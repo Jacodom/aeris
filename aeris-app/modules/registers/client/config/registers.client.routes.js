@@ -23,17 +23,64 @@
           pageTitle: 'Registers List'
         }
       })
-      .state('registers.create', {
-        url: '/create',
-        templateUrl: 'modules/registers/client/views/form-register.client.view.html',
-        controller: 'RegistersController',
+      .state('quiz', {
+        url: '/quiz',
+        abstract: true,
+        templateUrl: '<ui-view/>',
         controllerAs: 'vm',
-        resolve: {
-          registerResolve: newRegister
-        },
         data: {
           roles: ['user', 'admin'],
-          pageTitle : 'Registers Create'
+          pageTitle : 'Registers Create Quiz'
+        }
+      })
+      .state('quiz.start', {
+        url: '/start',
+        templateUrl: 'modules/registers/client/views/start.client.view.html',
+        controller: 'RegistersCreateQuizController',
+        controllerAs: 'vm',
+        data: {
+          roles: ['user', 'admin'],
+          pageTitle: 'Start the quiz'
+        }
+      })
+      .state('quiz.step-one', {
+        url: '/step-one',
+        templateUrl: 'modules/registers/client/views/step-one.client.view.html',
+        controller: 'RegistersCreateQuizController',
+        controllerAs: 'vm',
+        data: {
+          roles: ['user', 'admin'],
+          pageTitle : 'Step one'
+        }
+      })
+      .state('quiz.step-two', {
+        url: '/step-two',
+        templateUrl: 'modules/registers/client/views/step-two.client.view.html',
+        controller: 'RegistersCreateQuizController',
+        controllerAs: 'vm',
+        data: {
+          roles: ['user', 'admin'],
+          pageTitle : 'Step one'
+        }
+      })
+      .state('quiz.finish', {
+        url: '/finish',
+        templateUrl: 'modules/registers/client/views/finish.client.view.html',
+        controller: 'RegistersCreateQuizController',
+        controllerAs: 'vm',
+        data: {
+          roles: ['user', 'admin'],
+          pageTitle : 'Step one'
+        }
+      })
+      .state('quiz.thank-you', {
+        url: '/thank-you',
+        templateUrl: 'modules/registers/client/views/thank-you.client.view.html',
+        controller: 'RegistersCreateQuizController',
+        controllerAs: 'vm',
+        data: {
+          roles: ['user', 'admin'],
+          pageTitle : 'Step one'
         }
       })
       .state('registers.edit', {
