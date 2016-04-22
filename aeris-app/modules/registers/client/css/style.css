@@ -1,0 +1,22 @@
+.start-wrapper {
+  border: solid 1px #eee;
+  -webkit-box-shadow: -1px 4px 25px 1px rgba(125,119,125,0.27);
+  -moz-box-shadow: -1px 4px 25px 1px rgba(125,119,125,0.27);
+  box-shadow: -1px 4px 25px 1px rgba(125,119,125,0.27);
+}
+
+.start-header {
+  text-align: center;
+  padding: 3% 10%;
+}
+
+.start-header h3 {
+  color: red;
+  font-size: 40px;
+}
+
+.btns-wrapper {
+  text-align: center;
+  padding: 5%;
+  margin-bottom: 5%;
+}
