@@ -1,26 +1,39 @@
 <section>
-  <div class="page-header">
-    <h1>Maps</h1>
+  <div id="map"></div>
+  <div class="FilterContainer">
+    <div class="row row-offcanvas row-offcanvas-right">
+      <div class="col-xs-6 col-sm-3 sidebar-offcanvas sideBlock" id="sidebar" role="navigation">
+          <div class="list-group">
+              <h3 class="text-center">Filters</h3>
+          </div>
+          <div class="list-group">
+              <input id="searcha" class="form-control" type="text" placeholder="Search Place">
+          </div>
+          <div class="list-group">
+            <select id="layer" name="Layer" class="form-control" ng-model="layer">
+              <option value="">---Select Layer---</option>
+              <option value="aerosol">Aerosol</option>
+              <option value="carbonMonoxide">Carbon Monoxide</option>
+              <option value="carbonMonoxide">Carbon Monoxide</option>
+              <option value="nitricAcid">Nitric Acid</option>Nitric Oxide, Ozone, Sulfur Dioxide
+              <option value="nitricOxide">Nitric Oxide</option>
+              <option value="ozone">Ozone</option>
+              <option value="sulfurDioxide">Sulfur Dioxide</option>
+            </select>
+          </div>
+          <div class="list-group">
+            <h3 class="text-center">Symptoms</h3>
+            <ul>
+              <li class="list-unstyled"><input type="checkbox" id="" value="a" ng-model="mucus ">Mucus</input></li>
+              <li class="list-unstyled"><input type="checkbox"id="" ng-model="cough">Cough</input></li>
+              <li class="list-unstyled"><input type="checkbox"id="" ng-model="nasalobstruction">Nasal obstruction</input></li>
+              <li class="list-unstyled"><input type="checkbox"id="" ng-model="shortnessbreath">Shortness of breath</input></li>
+              <li class="list-unstyled"><input type="checkbox"id="" ng-model="wheezing">Wheezing</input></li>
+              <li class="list-unstyled"><input type="checkbox"id="" ng-model="itchyEyes">Itchy eyes</input></li>
+              <li class="list-unstyled"><input type="checkbox"id="" ng-model="Sneezing">Sneezing</input></li>
+            </ul>
+          </div>
+      </div>
+    </div>
   </div>
-  <div class="list-group">
-    <a data-ng-repeat="map in vm.maps"
-       data-ui-sref="maps.view({ mapId: map._id })"
-       class="list-group-item">
-      <small class="list-group-item-text">
-        Posted on
-        <span data-ng-bind="map.created | date:'mediumDate'"></span>
-        by
-        <span data-ng-if="map.user" data-ng-bind="map.user.displayName"></span>
-        <span data-ng-if="!map.user">Deleted User</span>
-      </small>
-      <h4 class="list-group-item-heading" data-ng-bind="map.name"></h4>
-    </a>
-  </div>
-  <div class="alert alert-warning text-center" data-ng-if="vm.maps.$resolved && !vm.maps.length">
-    No Maps yet, why don't you <a data-ui-sref="maps.create">create one</a>?
-  </div>
-  <div id="map">
-
-  </div>
-
 </section>
