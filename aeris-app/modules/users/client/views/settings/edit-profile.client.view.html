@@ -121,6 +121,74 @@
           <p class="help-block error-text" ng-message="required">Pullution option is required.</p>
         </div>
     </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group" show-errors>
+          <label for="thyroid">Thyroid?</label>
+          <select id="thyroid" name="thyroid" class="form-control" ng-model="user.thyroid" required>
+            <option value="">---Please select---</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+          <div ng-messages="userForm.toxic.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Thyroid option is required.</p>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group" show-errors>
+        <label for="thyroidType">Type?</label>
+        <select id="thyroidType" name="thyroidType" class="form-control" ng-model="user.thyroidType" required>
+          <option value="">---Please select---</option>
+          <option value="hypo">Hypo</option>
+          <option value="hyper">Hyper</option>
+        </select>
+        <div ng-messages="userForm.toxic.$error" role="alert">
+          <p class="help-block error-text" ng-message="required">Thyroid option is required.</p>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="form-group" show-errors>
+  <label for="celiac">You have celiac disease?</label>
+  <select id="celiac" name="celiac" class="form-control" ng-model="user.celiac" required>
+    <option value="">---Please select---</option>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+  <div ng-messages="userForm.toxic.$error" role="alert">
+    <p class="help-block error-text" ng-message="required">Pullution option is required.</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-group" show-errors>
+      <label for="diabetes">diabetes?</label>
+      <select id="diabetes" name="diabetes" class="form-control" ng-model="user.diabetes" required>
+        <option value="">---Please select---</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+      <div ng-messages="userForm.toxic.$error" role="alert">
+        <p class="help-block error-text" ng-message="required">Diabetes option is required.</p>
+      </div>
+  </div>
+</div>
+<div class="col-md-6">
+  <div class="form-group" show-errors>
+    <label for="diabetesType">Type?</label>
+    <select id="diabetesType" name="diabetesType" class="form-control" ng-model="user.diabetesType" required>
+      <option value="">---Please select---</option>
+      <option value="gestacional">Gestational diabetes</option>
+      <option value="1">Type 1</option>
+      <option value="2">Type 2</option>
+    </select>
+    <div ng-messages="userForm.toxic.$error" role="alert">
+      <p class="help-block error-text" ng-message="required">Thyroid option is required.</p>
+    </div>
+  </div>
+</div>
+</div>
       <div class="text-center form-group">
           <button type="submit" class="btn btn-primary aeris-btn">Save Profile</button>
         </div>
