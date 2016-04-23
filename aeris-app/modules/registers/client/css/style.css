@@ -1,3 +1,65 @@
+/* step views */
+#signup-form {
+  margin-top: 30px;
+  position:relative;
+  min-height: 750px;
+  overflow:hidden;
+}
+
+#steps-views {
+  width:100%;
+}
+
+/* basic styling for entering and leaving */
+/* left and right added to ensure full width */
+#steps-views.ng-enter,
+#steps-views.ng-leave      { position:absolute;
+    transition:0.5s all ease; -moz-transition:0.5s all ease; -webkit-transition:0.5s all ease;
+}
+
+/* enter animation */
+#steps-views.ng-enter            {
+    -webkit-animation:slideInRight 0.5s both ease;
+    -moz-animation:slideInRight 0.5s both ease;
+    animation:slideInRight 0.5s both ease;
+}
+
+/* leave animation */
+#steps-views.ng-leave            {
+    -webkit-animation:slideOutLeft 0.5s both ease;
+    -moz-animation:slideOutLeft 0.5s both ease;
+    animation:slideOutLeft 0.5s both ease;
+}
+
+/* ANIMATIONS
+============================================================================= */
+/* slide out to the left */
+@keyframes slideOutLeft {
+    to      { transform: translateX(-200%); }
+}
+@-moz-keyframes slideOutLeft {
+    to      { -moz-transform: translateX(-200%); }
+}
+@-webkit-keyframes slideOutLeft {
+    to      { -webkit-transform: translateX(-200%); }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+    from    { transform:translateX(200%); }
+    to      { transform: translateX(0); }
+}
+@-moz-keyframes slideInRight {
+    from    { -moz-transform:translateX(200%); }
+    to      { -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInRight {
+    from    { -webkit-transform:translateX(200%); }
+    to      { -webkit-transform: translateX(0); }
+}
+
+
+
 .start-wrapper {
   -webkit-box-shadow: -1px 4px 25px 1px rgba(125,119,125,0.27);
   -moz-box-shadow: -1px 4px 25px 1px rgba(125,119,125,0.27);
@@ -20,6 +82,11 @@
   text-align: center;
   padding: 5%;
   margin-bottom: 60px;
+}
+
+.btns-wrapper a {
+  color: #62b2a5;
+  margin-left: 10px;
 }
 
 
@@ -76,4 +143,67 @@ h.highlight-aeris {
 .aeris-btn:active:focus {
   border: none;
   background-color: #62b2a5;
+}
+
+/* question styles */
+.question-header {
+  padding: 30px;
+}
+
+.question-header h2{
+  font-size: 20px;
+  display: inline;
+}
+
+.question-header h2.highlight-aeris {
+  font-size: 30px;
+}
+
+.one-grad {
+  color: #2ecc71;
+}
+
+.four-grad {
+  color: #c0392b;
+}
+
+.palette-container {
+  margin-top: 50px;
+}
+
+.grade-palette {
+  margin-top: 20px;
+  display: inline;
+  padding: 0;
+  width: 400px;
+}
+
+.palette {
+  width: 24%;
+  height: 30px;
+  display: inline-block;
+}
+
+.palette-one {
+  background-color: #2ecc71;
+}
+
+.palette-two {
+  background-color: #f1c40f;
+}
+
+.palette-three {
+  background-color: #e67e22;
+}
+
+.palette-four {
+  background-color: #c0392b;
+}
+
+.symptom {
+  margin-top: 30px;
+}
+
+.symptom {
+  text-align: left;
 }

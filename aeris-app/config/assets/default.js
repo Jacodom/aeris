@@ -6,7 +6,8 @@ module.exports = {
       css: [
         'public/lib/bootstrap/dist/css/bootstrap.css',
         'public/lib/bootstrap/dist/css/bootstrap-theme.css',
-        'public/lib/font-awesome/css/font-awesome.min.css'
+        'public/lib/font-awesome/css/font-awesome.min.css',
+        'public/lib/angularjs-slider/dist/rzslider.css'
       ],
       js: [
         'public/lib/angular/angular.js',
@@ -20,6 +21,7 @@ module.exports = {
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
         'public/lib/lodash/dist/lodash.min.js',
         'public/lib/angular-google-maps/dist/angular-google-maps.min.js'
+        'public/lib/angularjs-slider/dist/rzslider.min.js'
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },
