@@ -27,10 +27,39 @@
   filter: alpha(opacity=0);
   opacity: 0;
   background: white;
+  background-color: #62b2a5;
   cursor: inherit;
   display: block;
 }
 .user-profile-picture {
   min-height: 150px;
   max-height: 150px;
+}
+.btn-primary.aeris-btn {
+  font-size: 20px;
+  background-color: #62b2a5;
+  background-image: none;
+  transition: all ease-out 0.3s;
+  border: none;
+}
+
+.aeris-btn:hover {
+  background-color: #fe6580;
+}
+
+.aeris-btn:focus {
+  border: none;
+}
+
+.aeris-btn:active:focus {
+  border: none;
+  background-color: #62b2a5;
+}
+.settingsTitle{
+  color: #62b2a5;
+  font-weight: bold;
+}
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus{
+  color: #fff;
+  background-color: #62b2a5;
 }

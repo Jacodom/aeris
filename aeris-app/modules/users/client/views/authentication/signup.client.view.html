@@ -1,8 +1,8 @@
 <div ng-controller="AuthenticationController">
-  <h3 class="col-md-12 text-center">Or sign up using your email</h3>
+  <h3 class="col-md-12 text-center">Create you account!</h3>
   <!--<div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4"> -->
     <form name="userForm" ng-submit="signup(userForm.$valid)" class="signin" novalidate autocomplete="off">
-      <div class="col-md-offset-1 col-md-4">
+      <div class="col-md-offset-1 col-md-5">
         <fieldset>
           <div class="row">
             <div class="col-md-6">
@@ -28,7 +28,7 @@
             <div class="col-md-6">
               <div class="form-group" show-errors>
                 <label for="age">Age</label>
-                <input type="numeric" id="age" name="age" class="form-control" ng-model="credentials.age" placeholder="Age" required>
+                <input type="number" id="age" name="age" class="form-control" ng-model="credentials.age" placeholder="Age" required>
                 <div ng-messages="userForm.age.$error" role="alert">
                   <p class="help-block error-text" ng-message="required">Age is required.</p>
                 </div>
@@ -88,7 +88,7 @@
 
         </fieldset>
       </div>
-      <div class="col-md-offset-1 col-md-4">
+      <div class="col-md-offset-1 col-md-5">
         <fieldset>
         <div class="form-group" show-errors>
           <label for="smoke">Do you Smoke</label>
@@ -123,9 +123,9 @@
           </div>
       </div>
         <div class="text-center form-group">
-          <button type="submit" class="btn btn-primary">Sign up</button>
+          <button type="submit" class="btn btn-primary aeris-btn">Sign up</button>
           &nbsp; or&nbsp;
-          <a ui-sref="authentication.signin" class="show-signup">Sign in</a>
+          <a ui-sref="authentication.signin" class="show-signup ">Sign in</a>
         </div>
         <div ng-show="error" class="text-center text-danger">
           <strong ng-bind="error"></strong>
