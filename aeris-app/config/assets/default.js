@@ -19,6 +19,8 @@ module.exports = {
         'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
         'public/lib/angular-file-upload/angular-file-upload.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
+        'public/lib/lodash/dist/lodash.min.js',
+        'public/lib/angular-google-maps/dist/angular-google-maps.min.js'
         'public/lib/angularjs-slider/dist/rzslider.min.js'
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
