@@ -44,7 +44,7 @@ var EsquemaRegisters = new Schema({
       required: true
     }
   }],
-  person: {
+  user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required: true
@@ -69,4 +69,4 @@ EsquemaRegisters.pre('save', function(next) {
 
 mongoose.model('Register', EsquemaRegisters);
 
-module.exports = mongoose.model('Registers', EsquemaRegisters);
+//module.exports = mongoose.model('Registers', EsquemaRegisters);
