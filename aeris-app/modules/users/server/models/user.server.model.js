@@ -82,22 +82,56 @@ var UserSchema = new Schema({
     default: ''
   },
   smoke: {
-    type: String,
+    type: Boolean,
     trim: true,
     default: '',
     validate: [validateLocalStrategyProperty, 'Please fill in your smoke data']
   },
   allergic: {
-    type: String,
+    type: Boolean,
     trim: true,
     default: '',
     validate: [validateLocalStrategyProperty, 'Please fill in your allergic data']
   },
   toxic: {
-    type: String,
+    type: Boolean,
     trim: true,
     default: '',
     validate: [validateLocalStrategyProperty, 'Please fill in your toxic data']
+  },
+  thyroid: {
+      tiene: {
+        type: Boolean,
+        trim: true,
+        default: '',
+        validate: [validateLocalStrategyProperty, 'Please fill in your thyroid data']
+      },
+      tipo: {type:String,
+              trim:true,
+              default: '',
+              validate: [validateLocalStrategyProperty, 'Please fill in your thyroid data'],
+              enum:['hyper','hypo']
+            },
+  },
+  celiac: {
+    type: Boolean,
+    trim: true,
+    default: '',
+    validate: [validateLocalStrategyProperty, 'Please fill in your celiac data']
+  },
+  diabetes: {
+      tiene: {
+          type: Boolean,
+          trim: true,
+          validate: [validateLocalStrategyProperty, 'Please fill in your diabetes data']
+      },
+      tipo:{
+        type: String,
+        trim:true,
+        default: '',
+        validate: [validateLocalStrategyProperty, 'Please fill in your diabetesTypes data'],
+        enum: ['gestacional','type1','type2']
+      }
   },
   salt: {
     type: String
@@ -127,6 +161,10 @@ var UserSchema = new Schema({
     type: Date,
     default: Date.now
   },
+  register:[{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:'Register'
+  }],
   /* For reset password */
   resetPasswordToken: {
     type: String

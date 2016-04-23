@@ -22,10 +22,7 @@
         maxZoom: 6,
         panControl:true,
         panControlOption:true,
-        rotateControl:true
-
-
-
+        rotateControl:true,
     };
   function initAutocomplete() {
     var map = new google.maps.Map(document.getElementById('map'), {
