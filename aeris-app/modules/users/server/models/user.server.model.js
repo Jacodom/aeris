@@ -99,6 +99,36 @@ var UserSchema = new Schema({
     default: '',
     validate: [validateLocalStrategyProperty, 'Please fill in your toxic data']
   },
+  thyroid: {
+    type: String,
+    trim: true,
+    default: '',
+    validate: [validateLocalStrategyProperty, 'Please fill in your thyroid data']
+  },
+  thyroidType: {
+    type: String,
+    trim: true,
+    default: '',
+    validate: [validateLocalStrategyProperty, 'Please fill in your thyroidType data']
+  },
+  celiac: {
+    type: String,
+    trim: true,
+    default: '',
+    validate: [validateLocalStrategyProperty, 'Please fill in your celiac data']
+  },
+  diabetes: {
+    type: String,
+    trim: true,
+    default: '',
+    validate: [validateLocalStrategyProperty, 'Please fill in your diabetes data']
+  },
+  diabetesTypes: {
+    type: String,
+    trim: true,
+    default: '',
+    validate: [validateLocalStrategyProperty, 'Please fill in your diabetesTypes data']
+  },
   salt: {
     type: String
   },
