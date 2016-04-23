@@ -12,7 +12,7 @@
       .state('registers', {
         abstract: true,
         url: '/registers',
-        template: '<ui-view/>'
+        template: '<div id="signup-form"><div id="steps-views" ui-view></div></div>'
       })
       .state('registers.list', {
         url: '',
@@ -26,7 +26,7 @@
       .state('quiz', {
         url: '/quiz',
         abstract: true,
-        templateUrl: '<ui-view/>',
+        templateUrl: 'modules/registers/client/views/quiz-base.html',
         controllerAs: 'vm',
         data: {
           roles: ['user', 'admin'],
