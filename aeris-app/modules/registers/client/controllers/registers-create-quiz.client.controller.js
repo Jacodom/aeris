@@ -4,6 +4,15 @@ angular.module('registers').controller('RegistersCreateQuizController', ['$scope
   function ($scope, $stateParams, $location, Authentication, RegistersService) {
     $scope.authentication = Authentication;
 
+    $scope.cough = 0;
+    $scope.breath = 0;
+    $scope.sneezing = 0;
+    $scope.wheezing = 0;
+    $scope.nasal = 0;
+    $scope.phlegm = 0;
+    $scope.eyes = 0;
+    $scope.snot = 0;
+
     $scope.minSlider = {
       value:0,
       options:{
@@ -12,35 +21,27 @@ angular.module('registers').controller('RegistersCreateQuizController', ['$scope
         step:1,
         precision: 1
       }
-    };
+    }
 
-    $scope.minSlider.cough = 0;
-    $scope.minSlider.breath = 0;
-    $scope.minSlider.sneezing = 0;
-    $scope.minSlider.wheezing = 0;
-    $scope.minSlider.nasal = 0;
-    $scope.minSlider.phlegm = 0;
-    $scope.minSlider.eyes = 0;
-    $scope.minSlider.snot = 0;
 
-    // Create new Article object
-    var register = new RegistersService({
-      sintomas: [{
-        tos: $scope.minSlider.cough,
-        dificultadRespiratoria: $scope.minSlider.breath,
-        estornudos: $scope.minSlider.sneezing,
-        sibilancia: $scope.minSlider.wheezing,
-        obstruccionNasal: $scope.minSlider.nasal,
-        ardorOjos: $scope.minSlider.eyes,
-        catarro: $scope.minSlider.phlegm,
-        mucosidad: $scope.minSlider.phlegm
-      }],
-      user: '',
-      created_at: '',
-      updated_at: '',
-    });
 
     $scope.saveRegister = function(){
+      // Create new register object
+      var register = new RegistersService({
+        sintomas: [{
+          tos: $scope.cough,
+          dificultadRespiratoria: $scope.breath,
+          estornudos: $scope.sneezing,
+          sibilancia: $scope.wheezing,
+          obstruccionNasal: $scope.nasal,
+          ardorOjos: $scope.eyes,
+          catarro: $scope.phlegm,
+          mucosidad: $scope.snot
+        }],
+        user: '',
+        created_at: '',
+        updated_at: '',
+      });
       register.$save(function (response) {
 
       }, function (errorResponse) {
