@@ -126,7 +126,7 @@ module.exports = function(app) {
         });
 
     });
-*/
+
   });
->>>>>>> master
+  */
 };
