@@ -31,7 +31,15 @@ var EsquemaRegisters = new Schema({
       type: Number,
       required: true
     },
+    ardorOjos: {
+      type: Number,
+      required: true
+    },
     catarro: {
+      type: Number,
+      required: true
+    },
+    mucosidad: {
       type: Number,
       required: true
     }

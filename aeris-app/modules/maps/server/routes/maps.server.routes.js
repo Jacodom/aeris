@@ -24,7 +24,7 @@ module.exports = function(app) {
   // app.param('mapId', maps.mapByID);
 
   app.post('api/maps', function(req,res){
-    
+    /*
     var ar_der = req.body.ar_der,
         ar_izq = req.body.ar_izq,
         ab_der = req.body.ab_der,
@@ -40,17 +40,17 @@ module.exports = function(app) {
     var espaciadoX = largo/cant
     var espaciadoY = alto/cant
 
-    //array correlativo  
+    //array correlativo
     var lat[];
     var lng[];
-    
+
     for (var i = 0; i <= cant; i++) {
       push.lat(ab_izq.lat + (i * espaciadoX));
       push.lng(ab_izq.lng + (i * espaciadoY));
     }
 
     var respuesta = [];
-    
+
     User
       .find(pos.lat: { $gt: ab_izq.lat, $lt: ab_lng.lat }, pos.lng: { $gt: ab_izq.lng, $lt: ar_izq.lng })
       .populate('register')
@@ -59,12 +59,12 @@ module.exports = function(app) {
 
 
         doc.forEach(function(i, reg){
-          
+
           for (var i = 1; i <= cant; i++) {
-            if (reg.pos.lat <= lat[i]){            
+            if (reg.pos.lat <= lat[i]){
               for (var j = 1; j <= cant; j++) {
                 if (reg.pos.lng <= lng[i]){
-                  
+
                 }
               }
             }
@@ -73,7 +73,6 @@ module.exports = function(app) {
         });
 
     });
-
+*/
   });
-
 };
