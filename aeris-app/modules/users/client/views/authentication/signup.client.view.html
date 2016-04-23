@@ -91,11 +91,11 @@
       <div class="col-md-offset-1 col-md-5">
         <fieldset>
         <div class="form-group" show-errors>
-          <label for="smoke">Do you Smoke</label>
+          <label for="smoke">Do you Smoke?</label>
           <select id="smoke" name="smoke" class="form-control" ng-model="credentials.smoke" required>
             <option value="">---Please select---</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
+            <option value=true>Yes</option>
+            <option value=false>No</option>
           </select>
           <div ng-messages="userForm.smoke.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Smoke option is required.</p>
@@ -105,8 +105,8 @@
             <label for="allergic">Are you allergic?</label>
             <select id="allergic" name="allergic" class="form-control" ng-model="credentials.allergic" required>
               <option value="">---Please select---</option>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
+              <option value=true>Yes</option>
+              <option value=false>No</option>
             </select>
             <div ng-messages="userForm.allergic.$error" role="alert">
               <p class="help-block error-text" ng-message="required">Allergic option is required.</p>
@@ -116,8 +116,8 @@
           <label for="toxic">Toxic Work?</label>
           <select id="toxic" name="toxic" class="form-control" ng-model="credentials.toxic" required>
             <option value="">---Please select---</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
+            <option value=true>Yes</option>
+            <option value=false>No</option>
           </select>
           <div ng-messages="userForm.toxic.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Pullution option is required.</p>
@@ -127,10 +127,10 @@
             <div class="col-md-6">
               <div class="form-group" show-errors>
                 <label for="thyroid">Thyroid?</label>
-                <select id="thyroid" name="thyroid" class="form-control" ng-model="credentials.thyroid" required>
+                <select id="thyroid" name="thyroid" class="form-control" ng-model="credentials.thyroid.tiene" required>
                   <option value="">---Please select---</option>
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
+                  <option value=true>Yes</option>
+                  <option value=false>No</option>
                 </select>
                 <div ng-messages="userForm.toxic.$error" role="alert">
                   <p class="help-block error-text" ng-message="required">Thyroid option is required.</p>
@@ -141,7 +141,7 @@
           <div class="col-md-6">
             <div class="form-group" show-errors>
               <label for="thyroidType">Type?</label>
-              <select id="thyroidType" name="thyroidType" class="form-control" ng-model="credentials.thyroidType" required>
+              <select id="thyroidType" name="thyroidType" class="form-control" ng-model="credentials.thyroid.tipo">
                 <option value="">---Please select---</option>
                 <option value="hypo">Hypo</option>
                 <option value="hyper">Hyper</option>
@@ -156,8 +156,8 @@
         <label for="celiac">You have celiac disease?</label>
         <select id="celiac" name="celiac" class="form-control" ng-model="credentials.celiac" required>
           <option value="">---Please select---</option>
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
+          <option value=true>Yes</option>
+          <option value=false>No</option>
         </select>
         <div ng-messages="userForm.toxic.$error" role="alert">
           <p class="help-block error-text" ng-message="required">Pullution option is required.</p>
@@ -167,10 +167,10 @@
         <div class="col-md-6">
           <div class="form-group" show-errors>
             <label for="diabetes">You have diabetes?</label>
-            <select id="diabetes" name="diabetes" class="form-control" ng-model="credentials.diabetes" required>
+            <select id="diabetes" name="diabetes" class="form-control" ng-model="credentials.diabetes.tiene" required>
               <option value="">---Please select---</option>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
+              <option value=true>Yes</option>
+              <option value=false>No</option>
             </select>
             <div ng-messages="userForm.toxic.$error" role="alert">
               <p class="help-block error-text" ng-message="required">Diabetes option is required.</p>
@@ -180,7 +180,7 @@
       <div class="col-md-6">
         <div class="form-group" show-errors>
           <label for="diabetesType">Type?</label>
-          <select id="diabetesType" name="diabetesType" class="form-control" ng-model="credentials.diabetesType" required>
+          <select id="diabetesType" name="diabetesType" class="form-control" ng-model="credentials.diabetes.tipo">
             <option value="">---Please select---</option>
             <option value="gestacional">Gestational diabetes</option>
             <option value="1">Type 1</option>
