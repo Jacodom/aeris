@@ -80,7 +80,7 @@ exports.delete = function(req, res) {
 /**
  * List of Registers
  */
-exports.list = function(req, res) { 
+exports.list = function(req, res) {
   Register.find().sort('-created').populate('user', 'displayName').exec(function(err, registers) {
     if (err) {
       return res.status(400).send({

@@ -159,6 +159,10 @@ h.highlight-aeris {
   font-size: 30px;
 }
 
+.symptom h2 {
+  line-height: 3.33;
+}
+
 .one-grad {
   color: #2ecc71;
 }
@@ -175,11 +179,11 @@ h.highlight-aeris {
   margin-top: 20px;
   display: inline;
   padding: 0;
-  width: 400px;
+  width: 300px;
 }
 
 .palette {
-  width: 24%;
+  width: 92px;
   height: 30px;
   display: inline-block;
 }
@@ -206,4 +210,42 @@ h.highlight-aeris {
 
 .symptom {
   text-align: left;
+}
+
+.slider-container {
+  width: 405px;
+  margin-left: 20px;
+}
+
+rzslider .rz-bubble {
+  color: #D2D2D2;
+}
+
+rzslider .rz-bubble.rz-limit {
+  color: #62b2a5;
+}
+
+rzslider .rz-pointer {
+  background-color: #62b2a5;
+}
+
+rzslider .rz-pointer.rz-active:after{
+  background-color: #4B4952;
+}
+
+.wrapper-step-one {
+  margin-bottom: 10px;
+}
+
+btn.btn-primary.aeris-btn .step-one-btn{
+  font-size: 30px;
+}
+
+#submit-btn {
+  font-size: 30px;
+}
+
+.like-container {
+  font-size: 80px;
+  text-align: center;
 }
