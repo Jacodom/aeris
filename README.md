@@ -1,9 +1,11 @@
+ <div style="text-align:center;"><img src="https://raw.githubusercontent.com/Jacodom/aeris/master/Dise%C3%B1o/Logo/Aeris%20Logo%20Base.png" alt="Drawing" style="width: 90px; text-align:center;"/></div>
 #Aeris
+
 Aeris es una plataforma que correlaciona datos satelitales proporcionados por la NASA e información de síntomas de afecciones respiratorias y enfermedades crónicas aportada por cada usuario. A partir de la escasez actual de información relevante que de pautas acerca de la relación entre síntomas y enfermedades, y agentes contaminantes del aire, se busca contribuir generando un nexo entre salud y medio ambiente a nivel mundial. El objetivo de la plataforma es generar un mapa que muestre marcadores que representan los datos ingresados por el usuario y las imágenes provistas por GIBS (Global Imagery Browse Services) para una experiencia de navegación interactiva. La información provista por los usuarios será de acceso libre, siendo entonces una plataforma crowdsourcing en vistas de contribuir con la salud pública y comunidad científica.
 
-Para más información acerca del proyecto: (ingresar enlace)
-Para más información acerca del equipo: (ingresar enlace)
-Para más información sobre el algoritmo principal: (ingresar enlace)
+Para más información acerca del [proyecto](https://github.com/Jacodom/aeris/blob/master/Documentos/Documentos/PROYECTO.md)
+Para más información acerca del [equipo](https://github.com/Jacodom/aeris/blob/master/Documentos/Documentos/TEAM.md)
+Para más información sobre el [algoritmo principal](https://github.com/Jacodom/aeris/blob/master/Documentos/Algoritmo/ALGORITMO%20PRINCIPAL.md)
 
 #App
 Este proyecto fue generado con [Angular Full-Stack Generator](https://github.com/angular-fullstack/generator-angular-fullstack) version 3.5.0
@@ -66,7 +68,7 @@ Run ```
 grunt build
 ``` for building and grunt serve for preview.
 
-##Testing
+##Prueba
 Running ```
 npm test
 ``` will run the unit tests with karma.
