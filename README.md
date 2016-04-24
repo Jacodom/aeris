@@ -1,4 +1,5 @@
- <div style="text-align:center;"><img src="https://raw.githubusercontent.com/Jacodom/aeris/master/Dise%C3%B1o/Logo/Aeris%20Logo%20Base.png" alt="Drawing" style="width: 90px; text-align:center;"/></div>
+ <div style="text-align:center;"><img src="https://raw.githubusercontent.com/Jacodom/aeris/master/Dise%C3%B1o/Logo/Aeris%20Logo%20Base.png" alt="Drawing" style="width: 90px;"/></div>
+ 
 #Aeris
 
 Aeris es una plataforma que correlaciona datos satelitales proporcionados por la NASA e información de síntomas de afecciones respiratorias y enfermedades crónicas aportada por cada usuario. A partir de la escasez actual de información relevante que de pautas acerca de la relación entre síntomas y enfermedades, y agentes contaminantes del aire, se busca contribuir generando un nexo entre salud y medio ambiente a nivel mundial. El objetivo de la plataforma es generar un mapa que muestre marcadores que representan los datos ingresados por el usuario y las imágenes provistas por GIBS (Global Imagery Browse Services) para una experiencia de navegación interactiva. La información provista por los usuarios será de acceso libre, siendo entonces una plataforma crowdsourcing en vistas de contribuir con la salud pública y comunidad científica.
@@ -39,15 +40,9 @@ Este proyecto fue generado con [Angular Full-Stack Generator](https://github.com
 ##Requisitos
 - [Git](https://git-scm.com/)
 - [Node.js and npm](https://github.com/Jacodom/aeris/blob/master/nodejs.org) Node ^4.2.3, npm ^2.14.7
-- [Bower](http://bower.io/) ```
-(npm install --global bower)
-```
-- [Grunt](http://gruntjs.com/) ```
-(npm install --global grunt-cli)
-```
-- [MongoDB](https://www.mongodb.org/) - Keep a running daemon with ```
-mongod
-```
+- [Bower](http://bower.io/) ```(npm install --global bower)```
+- [Grunt](http://gruntjs.com/) ```(npm install --global grunt-cli)```
+- [MongoDB](https://www.mongodb.org/) - Keep a running daemon with ```mongod```
 
 ##Desarrollo
 1. Run ```
