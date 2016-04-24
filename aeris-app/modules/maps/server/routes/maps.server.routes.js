@@ -23,7 +23,9 @@ module.exports = function(app) {
   // // Finish by binding the Map middleware
   // app.param('mapId', maps.mapByID);
 
-  app.post('api/maps', function(req,res) { 
+  
+  
+app.post('api/maps', function(req,res) { 
     var i,j,k;
 
     var ar_der = req.body.ar_der,
@@ -69,26 +71,59 @@ module.exports = function(app) {
     var respuesta = [];
 
     //contadores y sumadores para sacar promedio
-    var contTos = [][], sumTos = [][];
-    var contDifResp = [][], sumDifResp = [][];
-    var contEstornudos = [][], sumEstornudos = [][];
-    var contSibilancia = [][], sumSibilancia = [][];
-    var contCatarro = [][], sumCatarro = [][];
+    var contTos = [], sumTos = [];
+    var contDifResp = [], sumDifResp = [];
+    var contEstornudos = [], sumEstornudos = [];
+    var contSibilancia = [], sumSibilancia = [];
+    var contObstNasal = [], sumObstNasal = [];
+    var contArdorOjos = [], sumArdorOjos = [];
+    var contCatarro = [], sumCatarro = [];
+    var contMucosidad = [], sumMucosidad = [];
 
     //contadores de situacion personal de las regiones
-    var cantFuma = [][],
-        cantAlergico = [][],
-        cantTrabajoPeligroso = [][],
-        cantHipertiroides = [][],
-        cantCeliaco = [][],
-        cantDiabetes1 = [][],
-        cantDiabetes2 = [][];
+    var cantFuma = [],
+        cantAlergico = [],
+        cantTrabajoPeligroso = [],
+        cantTiroidesHyper = [],
+        cantTiroidesHypo = [],
+        cantCeliaco = [],
+        cantDiabetesGest = [],
+        cantDiabetes1 = [],
+        cantDiabetes2 = [];
+
+    for (i = 0; i < cant ; i++) {
+        contTos[i] = [];
+        sumTos = [];
+        contDifResp = [];
+        sumDifResp = [];
+        contEstornudos = [];
+        sumEstornudos = [];
+        contSibilancia = [];
+        sumSibilancia = [];
+        contObstNasal = [];
+        sumObstNasal = [];
+        contArdorOjos = [];
+        sumArdorOjos = [];
+        contCatarro = [];
+        sumCatarro = [];
+        contMucosidad = [];
+        sumMucosidad  = [];
+        cantFuma = [];
+        cantAlergico = [];
+        cantTrabajoPeligroso = [];
+        cantTiroidesHyper = [];
+        cantTiroidesHypo = [];
+        cantCeliaco = [];
+        cantDiabetesGest = [];
+        cantDiabetes1 = [];
+        cantDiabetes2    = [];
+    }
 
     //consulta a mongoDB restringiendo las lat y lng al cuadrado del mapa a pantalla completa
     User
       .find({
-          pos.lat: { $gt: ab_izq.lat, $lt: ab_izq.lat },
-          pos.lng: { $gt: ab_izq.lng, $lt: ar_der.lng }
+          'pos.lat': { $gt: ab_izq.lat, $lt: ab_izq.lat },
+          'pos.lng': { $gt: ab_izq.lng, $lt: ar_der.lng }
       })
       //relacionando las personas con los registros
       .populate('register')
@@ -108,12 +143,16 @@ module.exports = function(app) {
                   
               //arreglo bidimensional representando coordenadas (x,y)  
 
+
                   //contadores para sacar promedio
                   contTos[i][j] += (reg.tos > 0) ? 1 : 0;
                   contDifResp[i][j] += (reg.dificultadRespiratoria) > 0 ? 1 : 0;
                   contEstornudos[i][j] += (reg.estornudos > 0) ? 1 : 0;
                   contSibilancia[i][j] += (reg.sibilancia > 0) ? 1 : 0;
+                  contObstNasal[i][j] += (reg.obstruccionNasal > 0) ? 1 : 0;
+                  contArdorOjos[i][j] += (reg.andorOjos > 0) ? 1 : 0;
                   contCatarro[i][j] += (reg.catarro > 0) ? 1 : 0;      
+                  contMucosidad[i][j] += (reg.mucosidad > 0) ? 1 : 0;
 
 
                   //sumador para sacar promedio
@@ -121,16 +160,22 @@ module.exports = function(app) {
                   sumDifResp[i][j] +=(reg.dificultadRespiratoria > 0) ? reg.dificultadRespiratoria : 0;
                   sumEstornudos[i][j] += (reg.estornudos > 0) ? reg.estornudos : 0;
                   sumSibilancia[i][j] += (reg.sibilancia > 0) ? reg.sibilancia : 0;
+                  sumObstNasal[i][j] += (reg.obstruccionNasal > 0) ? reg.obstruccionNasal : 0;
+                  sumArdorOjos[i][j] += (reg.andorOjos > 0) ? reg.andorOjos : 0;
                   sumCatarro[i][j] += (reg.catarro > 0) ? reg.catarro : 0;
-
+                  sumMucosidad[i][j] += (reg.mucosidad > 0) ? reg.mucosidad : 0;
+                  
 
                   //estadisticas de personas
-                  cantFuma[i][j] += reg.fuma ? 1 : 0;
-                  cantAlergico[i][j] += reg.alergico ? 1 : 0;
-                  cantTrabajoPeligroso[i][j] += reg.trabajoPeligroso ? 1 : 0;
-                  cantHipertiroides[i][j] += reg.hipertiroides ? 1 : 0;
-                  cantCeliaco[i][j] += reg.celiaco ? 1 : 0;
-                  cantDiabetes[i][j] += (reg.diabetes) ? 1 : 0;
+                  cantFuma[i][j] += reg.smoke ? 1 : 0;
+                  cantAlergico[i][j] += reg.allergic ? 1 : 0;
+                  cantTrabajoPeligroso[i][j] += reg.toxic ? 1 : 0;
+                  cantTiroidesHyper[i][j] += ((reg.thyroid.tiene) && (reg.thyroid.tiene =='hyper' )) ? 1 : 0;
+                  cantTiroidesHypo[i][j] += ((reg.thyroid.tiene) && (reg.thyroid.tiene =='hypo' )) ? 1 : 0;
+                  cantCeliaco[i][j] += reg.celiac ? 1 : 0;
+                  cantDiabetesGest[i][j] += ((reg.diabetes.tiene) && (reg.diabetes.tipo == 'gestacional')) ? 1 : 0;
+                  cantDiabetes1[i][j] += ((reg.diabetes.tiene) && (reg.diabetes.tipo == 'type1')) ? 1 : 0;
+                  cantDiabetes2[i][j] += ((reg.diabetes.tiene) && (reg.diabetes.tipo == 'type2')) ? 1 : 0;
 
                 }
               }
@@ -149,17 +194,23 @@ module.exports = function(app) {
         for (i = 0; i < cant; i++) {
           for (j = 0; j < cant; j++) {
           
+
             respuesta[k] = {
               promedioTos: (sumTos[i][j]/contTos[i][j]), //promedios 
               promedioDificultadRespiratoria: (sumDifResp[i][j]/contDifResp[i][j]), //promedios
               promedioEstornudo: (sumEstornudos[i][j]/contEstornudos[i][j]), //promedios
               promedioSibilancia: (sumSibilancia[i][j]/contSibilancia[i][j]), //promedios
+              promedioObstruccionNasal: (sumObstNasal[i][j]/contObstNasal[i][j]), //promedios
+              promedioArdorOjos: (sumArdorOjos[i][j]/contArdorOjos[i][j]), //promedios
               promedioCatarro: (sumCatarro[i][j]/contCatarro[i][j]), //promedios
+              promedioMucosidad: (sumMucosidad[i][j]/contMucosidad[i][j]), //promedios
               cantidadFumadores: cantFuma[i][j],
               cantidadAlergicos: cantAlergico[i][j],
               cantidadTrabajoPeligroso: cantTrabajoPeligroso[i][j],
-              cantidadHipertiroides: cantHipertiroides[i][j],
+              cantidadTiroidesHyper: cantTiroidesHyper[i][j],
+              cantidadTiroidesHypo: cantTiroidesHypo[i][j],
               cantidadCeliaco: cantCeliaco[i][j],
+              cantidadDiabetesGestacional: cantDiabetesGest[i][j],
               cantidadDiabetes1: cantDiabetes1[i][j],
               cantidadDiabetees2: cantDiabetes2[i][j],
               latMarcador: latMarc[k],
@@ -173,5 +224,6 @@ module.exports = function(app) {
     res.json(respuesta);
   
   });
+
 
 };
